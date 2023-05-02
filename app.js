@@ -92,3 +92,20 @@ console.log(samsung)
 samsung.calcModel()
 
 Phones.phoneBrand();
+
+// Object.create()
+let someone = {
+	greet(){
+		console.log(`Hi my name is ${this.name}`)
+	},
+
+	init(name){
+		this.name = name
+	}
+}
+
+let wonder = Object.create(someone)
+console.log(wonder)
+wonder.init("Wonder")
+// wonder.name = "Wonderboy"
+wonder.greet()
