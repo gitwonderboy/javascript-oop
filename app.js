@@ -39,3 +39,56 @@ console.log(numbers[0])
  * The above Array is created from new Array() function constructor.
  * Inherit all methods / functions that new Array() constructor has.
  */
+
+// What is a class
+/**
+ * Classes in javascript allows us to create a blueprint and based on that blueprint,  we can instantiate object.
+ * Classes in javascript are different from the traditional classes in other Object-Oriented Languages like Java and C++.
+ * Classes are syntactic sugar of function constructor and prototypal inheritance. It's not a new concept in itself.
+ */
+
+//There are two ways of creating a class in javascript
+/**
+ * 1. Using class declaration in class declaration we use class keyword followed by class name.
+ * 2. Using class expression
+ */
+
+//class declaration
+class Person{
+}
+
+
+//Class expression
+let person = class{
+}
+
+// Class in javascript can not be hoisted
+// Hoisting is execution before declaration
+
+class Phones{
+	// The name of the class constructor should always be constructor can not be anything else
+
+	constructor (brand, androidVersion, price, year) {
+		this.brand = brand;
+		this.androidVersion = androidVersion;
+		this.price = price;
+		this.year = year;
+	  };
+
+	//   Instance Method - Always attached to the instances
+	  calcModel() {
+		let model = new Date().getFullYear() - this.year;
+		console.log(`This Smart Phone was launched ${model} years ago.`);
+	  };
+
+	//   Static Method - Always attached to the Class
+	  static phoneBrand(){
+		console.log("Hi I'm a Static Method")
+	  }
+}
+
+let samsung = new Phones("samsung", "v20", 16000, 2022)
+console.log(samsung)
+samsung.calcModel()
+
+Phones.phoneBrand();
